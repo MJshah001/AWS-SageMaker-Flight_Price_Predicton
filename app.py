@@ -27,8 +27,6 @@ from feature_engine.encoding import (
 from feature_engine.datetime import DatetimeFeatures
 from feature_engine.selection import SelectBySingleFeaturePerformance
 
-import matplotlib.pyplot as plt
-
 import warnings
 
 import pickle
@@ -38,8 +36,6 @@ import xgboost as xgb
 import joblib
 
 sklearn.set_config(transform_output="pandas") 
-# convinience functions
-
 
 # preprocessing operations
 

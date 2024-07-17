@@ -28,6 +28,7 @@ from feature_engine.datetime import DatetimeFeatures
 from feature_engine.selection import SelectBySingleFeaturePerformance
 
 import warnings
+warnings.filterwarnings("ignore")
 
 import pickle
 
@@ -258,9 +259,8 @@ preprocessor = Pipeline(steps=[
     ("selector",selector)
 ])
 
-# read the data
-path = "train.csv"
-train = pd.read_csv(path)
+# reading the training data
+train = pd.read_csv("train.csv")
 X_train = train.drop(columns="price")
 y_train = train.price.copy()
 
@@ -303,7 +303,7 @@ dep_time = st.time_input("Departure Time:")
 arrival_time = st.time_input("Arrival Time:")
 
 duration = st.number_input(
-    "Duration:",
+    "Duration(mins):",
     step=5,
     min_value=0
 )
